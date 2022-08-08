@@ -3,24 +3,28 @@ package com.miniproject.blackjack;
 public class Game {
 
   private int money;
+
   // TODO create dealer
-  //  private Dealer dealer;
+    private Dealer dealer;
 
   // TODO create player
-  // private Player player;
+   private Player player;
 
-  //TODO create a deck
+//  TODO create a deck
+  private Deck deck;
+
+  private Deck discardDeck;
 
 
   public Game(){
     money = 1000;
 
-    // deck = new Deck(true);
+     deck = new Deck(true);
 
-    // discardDack = new Deck();
+     discardDeck = new Deck();
 
-    // dealer = new Dealer();
-    // player = new Player();
+     dealer = new Dealer();
+     player = new Player();
 
   }
 
