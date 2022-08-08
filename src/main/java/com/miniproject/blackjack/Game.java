@@ -14,6 +14,14 @@ public class Game {
 
   public Game(){
     money = 1000;
+
+    // deck = new Deck(true);
+
+    // discardDack = new Deck();
+
+    // dealer = new Dealer();
+    // player = new Player();
+
   }
 
 
