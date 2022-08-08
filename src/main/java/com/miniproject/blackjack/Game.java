@@ -9,6 +9,8 @@ public class Game {
   // TODO create player
   // private Player player;
 
+  //TODO create a deck
+
 
   public Game(){
     money = 1000;
