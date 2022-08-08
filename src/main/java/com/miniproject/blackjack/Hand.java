@@ -15,6 +15,7 @@ public class Hand {
 // Business methods
   public boolean addToHand(Card card){
     boolean cardAdded = hand.add(card);
+    score += card.getValue();
     return cardAdded;
   }
 
