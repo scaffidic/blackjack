@@ -11,6 +11,6 @@ public class Dealer extends Person {
   }
 
   public void dealerPlay() {
-
+// if value < 17 hit, else stand
   }
 }
