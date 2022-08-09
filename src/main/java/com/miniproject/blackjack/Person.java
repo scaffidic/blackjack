@@ -1,28 +1,36 @@
 package com.miniproject.blackjack;
 
-import java.util.ArrayList;
-
 public abstract class Person {
 
   //Fields
   private String name;
   private Hand hand;
 
-
-  //Constructors
+  //Constructor
   public Person () {
     this.hand = new Hand();
     this.name = "";
+
   }
 
-  //Check if Player or Dealer has Blackjack
-  public boolean isBlackjack(){
+  public void printHand(){
+//    System.out.println(this.getName() + "'s hand is" + this.getHand + " valued at " + this.getHand.getValue);
+  }
+
+  //Check if Player or Dealer imhas Blackjack
+  public boolean isBlackjack() {
     return hand.getScore() == 21;
   }
 
+  public void hit(Deck deck, Deck discard) {
+    if (!deck.getDeck().isEmpty()) {
+      hand.addToHand(deck.draw());
+      //implement draw from deck or discard deck
+    }
+  }
+
+
   //add hit and stand
-//  abstract public void hit();
-//  abstract public void stand();
 
   public String getName() {
     return name;
