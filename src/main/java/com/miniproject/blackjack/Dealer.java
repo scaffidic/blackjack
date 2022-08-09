@@ -16,11 +16,11 @@ public class Dealer extends Person {
       System.out.println("Dealer has " + getHand().getScore() + " and hits.");
       deck.draw(this, discardDeck);
     }
-    if (getHand().getScore() > 21) {
-      System.out.println("Dealer busts. You win!");
-    } else {
-      System.out.println("Dealer stands.");
-    }
+//    if (getHand().getScore() > 21) {
+//      System.out.println("Dealer busts. You win!");
+//    } else {
+//      System.out.println("Dealer stands.");
+//    }
   }
 
 }
