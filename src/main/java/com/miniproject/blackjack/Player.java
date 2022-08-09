@@ -9,12 +9,13 @@ public class Player extends Person {
 //
 //  private int bet;
 
-  private Hand hand = new Hand();
+  private int bet;
+
+  private Hand hand;
 
 
   public Player() {
     super.setName("Player");
-    hand = new Hand();
   }
 
   public void hitOrStand(Deck deck, Deck discard) {
@@ -32,7 +33,7 @@ public class Player extends Person {
         input.next();
       }
       if (decision == 1) {
-        hand.addToHand(deck.draw());
+//        hand.addToHand(deck.draw());
         if (hand.getScore() > 21) {
           return;
         }

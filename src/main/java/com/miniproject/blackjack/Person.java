@@ -6,8 +6,6 @@ public abstract class Person {
   private String name;
   private Hand hand;
 
-
-
   //Constructor
   public Person () {
     this.hand = new Hand();
@@ -15,20 +13,13 @@ public abstract class Person {
 
   }
 
-  public void printHand(){
-    System.out.println(this.getName() + "'s contains" + this.hand + " valued at " + this.hand.getScore());
-  }
-
-  //Check if Player or Dealer has Blackjack
+  //Check if Player or Dealer imhas Blackjack
   public boolean isBlackjack() {
     return hand.getScore() == 21;
   }
 
-  public void hit(Deck deck, Deck discard) {
-    if (!deck.getDeck().isEmpty()) {
-      hand.addToHand(deck.draw());
-      //implement draw from deck or discard deck
-    }
+  public void hit(Deck deck, Deck discardDeck) {
+    deck.draw(this, discardDeck);
   }
 
 
@@ -50,4 +41,7 @@ public abstract class Person {
     this.hand = hand;
   }
 
+  public void printHand(){
+    System.out.println(this.getName() + "'s hand is " + this.hand + " valued at " + this.getHand().getScore());
+  }
 }

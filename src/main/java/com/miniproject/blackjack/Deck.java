@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Random;
 
 public class Deck {
+
   private ArrayList<Card> deck;
 
   public Deck(){
@@ -19,6 +20,8 @@ public class Deck {
     // nested loop through Suit enum values
     // create new Card(Rank, Suit)
     // add created Card to Array list
+
+    deck = new ArrayList<>();
 
      Suit[] suits = Suit.values();
      Rank[] ranks = Rank.values();
@@ -40,20 +43,33 @@ public class Deck {
   }
 
   // TODO finish draw() method
-  public Card draw() {
+  public void draw(Person dealerOrPlayer, Deck discardDeck) {
     Card nextCard;
     if (!deck.isEmpty()) {
       nextCard = deck.remove(0);
+      dealerOrPlayer.getHand().addToHand(nextCard);
 //      deck.iterator();
-      return nextCard;
     } else {
-      // figure out what to do if deck is empty
-      return null;
+      // take all cards from discard deck, add to shoe deck, then shuffle shoe;
+      deck.addAll(discardDeck.getDeck());
+      discardDeck.setDeck(new ArrayList<>());
+      shuffle();
+      draw(dealerOrPlayer, discardDeck);
     }
   }
 
   // Accessor methods
   public ArrayList<Card> getDeck() {
     return deck;
+  }
+
+  public void setDeck(ArrayList<Card> deck) {
+    this.deck = deck;
+  }
+
+  // toString()
+  @Override
+  public String toString() {
+    return deck.toString();
   }
 }

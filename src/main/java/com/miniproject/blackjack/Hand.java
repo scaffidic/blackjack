@@ -3,8 +3,11 @@ package com.miniproject.blackjack;
 import java.util.ArrayList;
 
 public class Hand {
+
+
   private ArrayList<Card> hand;
-  private int score;
+
+   private int score;
 
 // Constructor
   public Hand(){
@@ -19,12 +22,33 @@ public class Hand {
     return cardAdded;
   }
 
+  public void discardHand(Deck discardDeck){
+    ArrayList<Card> currDiscardDeck = discardDeck.getDeck();
+    currDiscardDeck.addAll(getHand());
+    discardDeck.setDeck(currDiscardDeck);
+    setHand(new ArrayList<>());
+    setScore(0);
+  }
+
 // Accessors
   public ArrayList<Card> getHand() {
     return hand;
   }
 
+  public void setHand(ArrayList<Card> hand) {
+    this.hand = hand;
+  }
+
   public int getScore() {
     return score;
+  }
+
+  public void setScore(int score) {
+    this.score = score;
+  }
+
+  @Override
+  public String toString() {
+    return hand.toString();
   }
 }
