@@ -18,26 +18,30 @@ public class Player extends Person {
     boolean inputNum = true;
 
     while (inputNum) {
+      printHand();
       try {
         System.out.println("Press (1) to Hit or (2) to Stand.");
         decision = input.nextInt();
-        inputNum = false;
+
+        if (decision > 2 || decision < 1){
+          throw new InputMismatchException();
+        }
 
       } catch (InputMismatchException e) {
         System.out.println("Invalid entry");
         input.next();
+        continue;
       }
+
       if (decision == 1) {
         hit(deck, discard);
-        if (getHand().getScore() < 21) {
-          this.hitOrStand(deck, discard);
-          System.out.println("you hit");
+        if (this.getHand().getScore() > 20){
+          return;
         }
-
-        break;
       }
-      else if (decision == 2){
+      else {
         System.out.println("You have chosen to Stand.");
+        inputNum = false;
       }
     }
   }
