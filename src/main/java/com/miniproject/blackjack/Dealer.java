@@ -9,12 +9,18 @@ public class Dealer extends Person {
   public Dealer () {
     setName("Dealer");
   }
-  public void printDealerHand() {
-//    System.out.println("Dealer has " + super.getHand().getCard(0));
-  }
 
-  public void dealerPlay() {
-// if value < 17 hit, else stand
+  public void dealerPlay(Deck deck, Deck discardDeck) {
+
+    while (super.getHand().getScore() <= 16) {
+      System.out.println("Dealer has " + getHand().getScore() + " and hits.");
+      deck.draw(this, discardDeck);
+    }
+    if (getHand().getScore() > 21) {
+      System.out.println("Dealer busts. You win!");
+    } else {
+      System.out.println("Dealer stands.");
+    }
   }
 
 }
