@@ -22,6 +22,10 @@ public class Hand {
     return cardAdded;
   }
 
+  public Card getCard(int i) {
+    return hand.get(i);
+  }
+
   public void discardHand(Deck discardDeck){
     ArrayList<Card> currDiscardDeck = discardDeck.getDeck();
     currDiscardDeck.addAll(getHand());

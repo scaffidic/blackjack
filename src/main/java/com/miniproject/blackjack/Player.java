@@ -22,23 +22,21 @@ public class Player extends Person {
         System.out.println("Press (1) to Hit or (2) to Stand.");
         decision = input.nextInt();
         inputNum = false;
-
-      } catch (InputMismatchException e) {
+      }
+      catch (InputMismatchException e) {
         System.out.println("Invalid entry");
         input.next();
       }
-      if (decision == 1) {
-        hit(deck, discard);
-        if (getHand().getScore() < 21) {
-          this.hitOrStand(deck, discard);
-          System.out.println("you hit");
-        }
-
-        break;
-      }
-      else if (decision == 2){
-        System.out.println("You have chosen to Stand.");
-      }
     }
+      if (decision == 1) {
+        this.hit(deck, discard);
+        if (getHand().getScore() > 20) {
+          return;
+        } else {
+          this.hitOrStand(deck, discard);
+        }
+      } else {
+        System.out.println("Player stands.");
+      }
   }
 }
