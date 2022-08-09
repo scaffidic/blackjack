@@ -45,12 +45,13 @@ public class Game {
     dealer.printHand();
     player.printHand();
 
-    System.out.println("Deck size before hit" + deck.getDeck().size());
-    player.hit(deck, discardDeck);
+    player.hitOrStand(deck, discardDeck);
 
-    System.out.println("Hit!!!");
+//    player.hit(deck, discardDeck);
+    dealer.dealerPlay(deck, discardDeck);
+    dealer.printHand();
+
     player.printHand();
-    System.out.println("Deck size after hit" + deck.getDeck().size());
   }
 
   public void discardHands(){

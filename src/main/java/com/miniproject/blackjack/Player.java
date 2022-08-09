@@ -1,18 +1,13 @@
 package com.miniproject.blackjack;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Player extends Person {
 
   Scanner input = new Scanner(System.in);
-//  private int bank;
-//
-//  private int bet;
 
   private int bet;
-
-  private Hand hand;
-
 
   public Player() {
     super.setName("Player");
@@ -28,21 +23,22 @@ public class Player extends Person {
         decision = input.nextInt();
         inputNum = false;
 
-      } catch (IllegalArgumentException e) {
+      } catch (InputMismatchException e) {
         System.out.println("Invalid entry");
         input.next();
       }
       if (decision == 1) {
-//        hand.addToHand(deck.draw());
-        if (hand.getScore() > 21) {
-          return;
-        }
-        else {
+        hit(deck, discard);
+        if (getHand().getScore() < 21) {
           this.hitOrStand(deck, discard);
+          System.out.println("you hit");
         }
-        } else {
+
+        break;
+      }
+      else if (decision == 2){
         System.out.println("You have chosen to Stand.");
-        }
       }
     }
   }
+}
