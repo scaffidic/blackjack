@@ -26,11 +26,11 @@ public class Game {
     deck.draw(player, discardDeck);
     deck.draw(dealer, discardDeck);
 
-    dealer.printFirstHand();
+    dealer.printHand();
     player.printHand();
 
     if (dealer.isBlackjack()) {
-      // invoke push method
+      dealer.setDealerHandVisible(true);
       dealer.printHand();
       if (player.isBlackjack()) {
         // player wins

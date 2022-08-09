@@ -35,7 +35,7 @@ public class Player extends Person {
         } else {
           this.hitOrStand(deck, discard);
         }
-      } else {
+      } if(decision == 2) {
         System.out.println("Player stands.");
       }
   }
