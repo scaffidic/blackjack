@@ -11,7 +11,11 @@ public class Main {
     System.out.println(ANSI_GREEN + "Welcome to Blackjack!" + ANSI_RESET);
     Game game = new Game();
 
-    game.startRound();
+    boolean keepPlaying = true;
+
+    while(keepPlaying){
+    keepPlaying = game.startRound();
+    }
 
 
   }
