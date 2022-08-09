@@ -20,7 +20,7 @@ public class Player extends Person {
     while (inputNum) {
       printHand();
       try {
-        System.out.println("Press (1) to Hit or (2) to Stand.");
+        System.out.println("\n\tPress (1) to Hit or (2) to Stand.");
         decision = input.nextInt();
 
         if (decision > 2 || decision < 1){
