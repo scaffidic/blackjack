@@ -22,9 +22,15 @@ public class Player extends Person {
       try {
         System.out.println("Press (1) to Hit or (2) to Stand.");
         decision = input.nextInt();
+
+        if (decision > 2 || decision < 1){
+          throw new InputMismatchException();
+        }
+
       } catch (InputMismatchException e) {
         System.out.println("Invalid entry");
         input.next();
+        continue;
       }
 
       if (decision == 1) {
