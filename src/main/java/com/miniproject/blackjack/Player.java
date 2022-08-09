@@ -24,20 +24,24 @@ public class Player extends Person {
         inputNum = false;
 
       } catch (InputMismatchException e) {
-        System.out.println("Invalid entry");
         input.next();
       }
       if (decision == 1) {
         hit(deck, discard);
         if (getHand().getScore() < 21) {
+          System.out.println("You have hit: new value - " + getHand().getScore());
           this.hitOrStand(deck, discard);
-          System.out.println("you hit");
         }
 
         break;
       }
       else if (decision == 2){
         System.out.println("You have chosen to Stand.");
+      }
+      else {
+        System.out.println("Invalid entry");
+        throw new InputMismatchException();
+
       }
     }
   }
