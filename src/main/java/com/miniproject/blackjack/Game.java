@@ -22,6 +22,7 @@ public class Game {
   }
 
   public boolean startRound() {
+    dealer.setDealerHandVisible(false);
     discardHands();
     System.out.println("Bets are 100 only. Your money is: " + getMoney());
 
@@ -46,53 +47,62 @@ public class Game {
     } else if (player.isBlackjack()) {
       // player wins
       System.out.println("Player hit blackjack! You win!");
+      printAllHands();
       setMoney(getMoney() + 100);
 
       return true;
     } else if (dealer.isBlackjack()) {
       // dealer wins
       System.out.println("Dealer hit blackjack!");
+      printAllHands();
       setMoney(getMoney() - 100);
       return true;
     }
-    System.out.println("Discard deck: " + discardDeck);
     dealer.printHand();
-    player.printHand();
+//    player.printHand();
 
     player.hitOrStand(deck, discardDeck);
-    player.printHand();
-    dealer.printHand();
 
     int playerScore = player.getHand().getScore();
 
     if (playerScore > 21){
       System.out.println("Player busted. You lose!");
+      printAllHands();
       setMoney(getMoney() - 100);
       return true;
     }
 
     dealer.dealerPlay(deck, discardDeck);
-    player.printHand();
+    dealer.setDealerHandVisible(true);
     dealer.printHand();
     int dealerScore = dealer.getHand().getScore();
 
     if (dealerScore > 21){
       System.out.println("Dealer busted. You win!");
+      printAllHands();
       setMoney(getMoney() + 100);
       return true;
     } else if (dealerScore > playerScore){
       System.out.println("Dealer wins! You lose!");
+      printAllHands();
       setMoney(getMoney() - 100);
-
       return true;
     } else if (dealerScore < playerScore){
       System.out.println("You win!");
+      printAllHands();
       setMoney(getMoney() + 100);
       return true;
     } else {
       System.out.println("Push!");
+      printAllHands();
       return true;
     }
+  }
+
+  private void printAllHands() {
+    dealer.setDealerHandVisible(true);
+    dealer.printHand();
+    player.printHand();
   }
 
   public void discardHands(){
