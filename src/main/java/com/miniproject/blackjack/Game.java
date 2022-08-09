@@ -27,8 +27,6 @@ public class Game {
     deck.draw(dealer, discardDeck);
 
     System.out.println();
-    dealer.printHand();
-    player.printHand();
 
     // TODO if-else statement
     if(player.isBlackjack() && dealer.isBlackjack()){
@@ -46,6 +44,13 @@ public class Game {
     System.out.println("Discard deck: " + discardDeck);
     dealer.printHand();
     player.printHand();
+
+    System.out.println("Deck size before hit" + deck.getDeck().size());
+    player.hit(deck, discardDeck);
+
+    System.out.println("Hit!!!");
+    player.printHand();
+    System.out.println("Deck size after hit" + deck.getDeck().size());
   }
 
   public void discardHands(){

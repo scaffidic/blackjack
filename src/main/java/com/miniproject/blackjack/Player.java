@@ -33,7 +33,7 @@ public class Player extends Person {
         input.next();
       }
       if (decision == 1) {
-        hand.addToHand(deck.draw());
+//        hand.addToHand(deck.draw());
         if (hand.getScore() > 21) {
           return;
         }

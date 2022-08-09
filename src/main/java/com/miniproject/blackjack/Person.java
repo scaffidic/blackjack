@@ -13,20 +13,13 @@ public abstract class Person {
 
   }
 
-  public void printHand(){
-//    System.out.println(this.getName() + "'s hand is" + this.getHand + " valued at " + this.getHand.getValue);
-  }
-
   //Check if Player or Dealer imhas Blackjack
   public boolean isBlackjack() {
     return hand.getScore() == 21;
   }
 
-  public void hit(Deck deck, Deck discard) {
-    if (!deck.getDeck().isEmpty()) {
-      hand.addToHand(deck.draw());
-      //implement draw from deck or discard deck
-    }
+  public void hit(Deck deck, Deck discardDeck) {
+    deck.draw(this, discardDeck);
   }
 
 
