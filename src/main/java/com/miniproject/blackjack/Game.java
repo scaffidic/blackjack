@@ -22,7 +22,9 @@ public class Game {
   public boolean startRound() {
     dealer.setDealerHandVisible(false);
     discardHands();
-    System.out.println("Bets are 100 only. Your money is: " + getMoney());
+    System.out.println("------------------------------------------");
+    System.out.printf("| Bets are 100 only. Your money is: %d |\n", getMoney());
+    System.out.println("------------------------------------------");
 
     if (getMoney() <= 0){
       System.out.println("You are out of money. GAME IS OVER!");
@@ -74,22 +76,22 @@ public class Game {
     int dealerScore = dealer.getHand().totalValue();
 
     if (dealerScore > 21){
-      System.out.println("Dealer busted. You win!");
+      System.out.println("Dealer busted. You win!\n");
       printAllHands();
       setMoney(getMoney() + 100);
       return true;
     } else if (dealerScore > playerScore){
-      System.out.println("Dealer wins! You lose!");
+      System.out.println("Dealer wins! You lose!\n");
       printAllHands();
       setMoney(getMoney() - 100);
       return true;
     } else if (dealerScore < playerScore){
-      System.out.println("You win!");
+      System.out.println("You win!\n");
       printAllHands();
       setMoney(getMoney() + 100);
       return true;
     } else {
-      System.out.println("Push!");
+      System.out.println("Push!\n");
       printAllHands();
       return true;
     }
@@ -97,6 +99,7 @@ public class Game {
 
   private void printAllHands() {
     dealer.setDealerHandVisible(true);
+    System.out.println("\tFinal:");
     dealer.printHand();
     player.printHand();
   }

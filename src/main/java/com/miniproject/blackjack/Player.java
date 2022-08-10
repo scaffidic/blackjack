@@ -40,7 +40,7 @@ public class Player extends Person {
         }
       }
       else {
-        System.out.println("You have chosen to Stand.");
+        System.out.println("You stand.");
         inputNum = false;
       }
     }

@@ -17,15 +17,17 @@ public class Dealer extends Person {
     if (dealerHandVisible) {
       super.printHand();
     } else {
-      System.out.printf("%s's hand is [%s, \uD83C\uDCA0]%n", getName(), getHand().getHand().get(0));
+      System.out.printf("%s's hand is [%s, \uD83C\uDCA0]%n",
+          getName(), getHand().getHand().get(0));
     }
   }
 
   public void dealerPlay(Deck deck, Deck discardDeck) {
-
     while (super.getHand().totalValue() <= 16) {
-      System.out.println("Dealer has " + getHand().totalValue() + " and hits.");
+      System.out.printf("%s has %d and hits.\n",
+          this.getName(), getHand().totalValue());
       deck.draw(this, discardDeck);
+
     }
   }
 
