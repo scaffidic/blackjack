@@ -1,6 +1,5 @@
 package com.miniproject.blackjack.model;
 
-import com.miniproject.blackjack.controller.Person;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,10 +21,9 @@ public class Deck {
 
   /**
    * Constructor that takes a boolean parameter.
-   *
-   * @param mainDeck
    */
-  // TODO finish Deck constructor
+
+  // Constructor
   public Deck() {
 
     deck = new ArrayList<>();
@@ -57,7 +55,7 @@ public class Deck {
    * is empty, then remove first card from the top of the discard deck and adds the player or
    * dealer's hand.
    */
-  // TODO finish draw() method
+
   public Card draw() {
     Card nextCard;
     if (cardIterator == null || !cardIterator.hasNext()) {

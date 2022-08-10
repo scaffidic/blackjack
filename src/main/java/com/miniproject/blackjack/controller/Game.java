@@ -1,19 +1,20 @@
-package com.miniproject.blackjack.model;
+package com.miniproject.blackjack.controller;
 
+import com.miniproject.blackjack.model.Dealer;
+import com.miniproject.blackjack.model.Deck;
 import com.miniproject.blackjack.view.Colors;
-import com.miniproject.blackjack.controller.Dealer;
 import com.miniproject.blackjack.controller.Player;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
-  private int money;
+
   private final Dealer dealer;
   private final Player player;
   private Deck deck;
   private final String playerName;
 
   public Game() {
-    money = 1000;
     deck = new Deck();
     deck.shuffle();
     dealer = new Dealer();
@@ -23,25 +24,33 @@ public class Game {
     String name = input.nextLine();
     playerName = name;
     player.setName(Colors.BLUE + playerName);
-//    System.out.println("You bet: " + betMoney());
   }
 
   public boolean startRound() {
     dealer.setDealerHandVisible(false);
-//    betMoney();
-    displayBank();
+    player.getHand().clear();
+    dealer.getHand().clear();
 
-    if (getMoney() <= 0){
+    displayBank();
+    if (player.getMoney() <= 0.0) {
       System.out.println(Colors.RED + "\nYou are out of money. GAME IS OVER!" + Colors.RESET);
       return false;
+    } else {
+      betMoney();
     }
 
-      player.hit(deck);
-      dealer.hit(deck);
+    player.hit(deck);
+    dealer.hit(deck);
+    player.hit(deck);
+    dealer.hit(deck);
 
     System.out.println();
+    System.out.println(dealer);
+    System.out.println(player);
 
-    if(player.isBlackjack() && dealer.isBlackjack()){
+    double currentBet = player.getBet();
+
+    if (player.isBlackjack() && dealer.isBlackjack()) {
       System.out.println(Colors.CYAN + "\nPush!\n" + Colors.RESET);
       printAllHands();
       return keepPlayingOrNot();
@@ -49,27 +58,28 @@ public class Game {
       // player wins
       System.out.println(Colors.GREEN + playerName + " hit blackjack! You win!" + Colors.RESET);
       printAllHands();
-      setMoney(getMoney() + 100);
+      player.setMoney(player.getMoney() + (currentBet * 1.5));
       return keepPlayingOrNot();
     } else if (dealer.isBlackjack()) {
       // dealer wins
       System.out.println(Colors.RED + "\nDealer hit blackjack!" + Colors.RESET);
       printAllHands();
-      setMoney(getMoney() - 100);
+      player.setMoney(player.getMoney() - currentBet);
       return keepPlayingOrNot();
     }
 
     showDealerHand();
 
     player.hitOrStand(deck);
+    currentBet = player.getBet();
 
     int playerScore = player.getHand().totalValue();
 
     boolean playOrNot;
-    if (playerScore > 21){
+    if (playerScore > 21) {
       System.out.println(Colors.RED + "\nPlayer busted. You lose!" + Colors.RESET);
       printAllHands();
-      setMoney(getMoney() - 100);
+      player.setMoney(player.getMoney() - currentBet);
       playOrNot = keepPlayingOrNot();
       return playOrNot;
     }
@@ -79,23 +89,22 @@ public class Game {
     showDealerHand();
     int dealerScore = dealer.getHand().totalValue();
 
-
-    if (dealerScore > 21){
+    if (dealerScore > 21) {
       System.out.println(Colors.GREEN + "\nDealer busted. You win!\n" + Colors.RESET);
       printAllHands();
-      setMoney(getMoney() + 100);
+      player.setMoney(player.getMoney() + currentBet);
       playOrNot = keepPlayingOrNot();
       return playOrNot;
-    } else if (dealerScore > playerScore){
+    } else if (dealerScore > playerScore) {
       System.out.println(Colors.RED + "\nDealer wins! You lose!\n" + Colors.RESET);
       printAllHands();
-      setMoney(getMoney() - 100);
+      player.setMoney(player.getMoney() - currentBet);
       playOrNot = keepPlayingOrNot();
       return playOrNot;
-    } else if (dealerScore < playerScore){
+    } else if (dealerScore < playerScore) {
       System.out.println(Colors.GREEN + "\nYou win!\n" + Colors.RESET);
       printAllHands();
-      setMoney(getMoney() + 100);
+      player.setMoney(player.getMoney() + currentBet);
       playOrNot = keepPlayingOrNot();
       return playOrNot;
     } else {
@@ -114,7 +123,10 @@ public class Game {
 
   private void displayBank() {
     System.out.println(Colors.CYAN + "\n----------------------------------------");
-    System.out.printf("| " + Colors.RESET + "Current Bank Value: " + Colors.GREEN + "$%d " + Colors.CYAN + "|\n", getMoney());
+    System.out.printf(
+        "| " + Colors.RESET + "Current Bank Value: " + Colors.GREEN + "$%.2f "
+            + Colors.CYAN + "      |\n",
+        player.getMoney());
     System.out.println("----------------------------------------" + Colors.RESET);
   }
 
@@ -123,64 +135,51 @@ public class Game {
     System.out.print(Colors.BLACK + Colors.WHITE_BACKGROUND);
     System.out.println("\tFinal:" + Colors.RESET);
     System.out.print(Colors.PURPLE);
-    dealer.toString();
+    System.out.println(
+        dealer.getName() + "'s hand - " + dealer.toString() + Colors.RESET + " - valued at "
+            + dealer.getHand().totalValue());
     System.out.print(Colors.BLUE);
-    player.toString();
+    System.out.println(player.toString());
     System.out.print(Colors.RESET);
   }
 
-  public boolean keepPlayingOrNot(){
+  public boolean keepPlayingOrNot() {
     displayBank();
-    System.out.println(Colors.YELLOW + "\n Do you want to keep playing? \n Y - to continue. \n Any other character - to exit\n" + Colors.RESET);
+    System.out.println(Colors.YELLOW
+        + "\n Do you want to keep playing? \n Y - to continue. \n Any other character - to exit\n"
+        + Colors.RESET);
     Scanner input = new Scanner(System.in);
     char answer = input.next().toLowerCase().charAt(0);
     if (answer != 'y') {
-      System.out.println(Colors.CYAN + "\nGoodbye, " + playerName + "! You are leaving with $" + money +"." + Colors.RESET);
+      System.out.println(
+          Colors.CYAN + "\nGoodbye, " + playerName + "! You are leaving with $" + player.getMoney()
+              + "."
+              + Colors.RESET);
     }
     return answer == 'y';
   }
 
-//  public int betMoney() {
-//    System.out.println(
-//        Colors.YELLOW + "\n Enter the amount you would like to bet: \n" + Colors.RESET);
-//    int bet = 1;
-//    Scanner input = new Scanner(System.in);
-//    if (input.hasNextInt()) {
-//      bet = input.nextInt();
-//      if (bet > money) {
-//        System.out.println("Please enter an amount less than: " + money);
-//        input.nextInt();
-//      } else {
-//        System.out.println("You bet: " + bet +". Remaining balance: " + (money-bet));
-//      }
-//    }
-//    return bet;
-//  }
-
-//  public boolean doubleDown() {
-//    System.out.println(Colors.YELLOW + "\n double down? \n Y - to double down. "
-//        + "\n Any other character - to reject\n" + Colors.RESET);
-//    Scanner input = new Scanner(System.in);
-//    char response = input.next().toLowerCase().charAt(0);
-//    if (response == 'y') {
-//
-//    }
-//  }
-
-  public Deck getDeck() {
-    return deck;
+  public void betMoney() {
+    Scanner input = new Scanner(System.in);
+    double bet = 0;
+    boolean inputNum = true;
+    while (inputNum) {
+      try {
+        System.out.println(
+            Colors.YELLOW + "\n Enter the amount you would like to bet: \n" + Colors.RESET);
+        bet = input.nextDouble();
+        if (bet > player.getMoney()) {
+          System.out.println("Please enter an amount no more than: $" + player.getMoney());
+          continue;
+        }
+      } catch (InputMismatchException e) {
+        System.out.println(Colors.RED + "Invalid entry\n" + Colors.RESET);
+        input.nextLine();
+        continue;
+      }
+      System.out.println("You bet: $" + bet + ". Remaining balance: $" + (player.getMoney() - bet));
+      player.setBet(bet);
+      inputNum = false;
+    }
   }
-
-  public void setDeck(Deck deck) {
-    this.deck = deck;
-  }
-
-  public int getMoney() {
-    return money;
-  }
-
-  public void setMoney(int money) {
-    this.money = money;
-  }
-
 }

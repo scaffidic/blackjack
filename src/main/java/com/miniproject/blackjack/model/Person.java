@@ -1,4 +1,4 @@
-package com.miniproject.blackjack.controller;
+package com.miniproject.blackjack.model;
 
 import com.miniproject.blackjack.model.Hand;
 import com.miniproject.blackjack.model.Deck;
@@ -17,7 +17,7 @@ public abstract class Person {
 
   }
 
-  //Check if Player or Dealer has Blackjack
+  // Business methods
   public boolean isBlackjack() {
     return hand.totalValue() == 21;
   }
@@ -26,6 +26,7 @@ public abstract class Person {
     hand.addToHand(deck.draw());
   }
 
+  // Accessors and mutators
   public String getName() {
     return name;
   }
@@ -38,6 +39,7 @@ public abstract class Person {
     return hand;
   }
 
+  // toString()
   @Override
   public String toString() {
     return this.getName() + "'s hand - " + this.hand + Colors.RESET + " - valued at "

@@ -9,7 +9,6 @@ import java.util.List;
 
 public class Hand {
 
-
   private List<Card> hand;
 
    private int score;
@@ -51,6 +50,7 @@ public class Hand {
     hand.clear();
   }
 
+// toString()
   @Override
   public String toString() {
     return hand.toString();
