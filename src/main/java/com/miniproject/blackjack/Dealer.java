@@ -23,8 +23,8 @@ public class Dealer extends Person {
 
   public void dealerPlay(Deck deck, Deck discardDeck) {
 
-    while (super.getHand().getScore() <= 16) {
-      System.out.println("Dealer has " + getHand().getScore() + " and hits.");
+    while (super.getHand().totalValue() <= 16) {
+      System.out.println("Dealer has " + getHand().totalValue() + " and hits.");
       deck.draw(this, discardDeck);
     }
   }

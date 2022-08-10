@@ -13,9 +13,9 @@ public abstract class Person {
 
   }
 
-  //Check if Player or Dealer imhas Blackjack
+  //Check if Player or Dealer has Blackjack
   public boolean isBlackjack() {
-    return hand.getScore() == 21;
+    return hand.totalValue() == 21;
   }
 
   public void hit(Deck deck, Deck discardDeck) {
@@ -42,6 +42,6 @@ public abstract class Person {
   }
 
   public void printHand(){
-    System.out.println(this.getName() + "'s hand is " + this.hand + " valued at " + this.getHand().getScore());
+    System.out.println(this.getName() + "'s hand is " + this.hand + " valued at " + this.getHand().totalValue());
   }
 }

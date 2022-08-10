@@ -35,7 +35,7 @@ public class Player extends Person {
 
       if (decision == 1) {
         hit(deck, discard);
-        if (this.getHand().getScore() > 20){
+        if (this.getHand().totalValue() > 20){
           return;
         }
       }

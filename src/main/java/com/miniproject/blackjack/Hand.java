@@ -18,7 +18,6 @@ public class Hand {
 // Business methods
   public boolean addToHand(Card card){
     boolean cardAdded = hand.add(card);
-    score += card.getValue();
     return cardAdded;
   }
 
@@ -30,6 +29,25 @@ public class Hand {
     setScore(0);
   }
 
+  public int totalValue() {
+    int value = 0;
+    int numAce = 0;
+
+    for(Card card: hand) {
+      value += card.getValue();
+      if (card.getValue() == 11) {
+        numAce++;
+      }
+    }
+    if (value > 21 && numAce > 0) {
+      while(numAce > 0 && value > 21) {
+        numAce--;
+        value -= 10;
+      }
+    }
+    return value;
+  }
+
 // Accessors
   public ArrayList<Card> getHand() {
     return hand;
@@ -37,10 +55,6 @@ public class Hand {
 
   public void setHand(ArrayList<Card> hand) {
     this.hand = hand;
-  }
-
-  public int getScore() {
-    return score;
   }
 
   public void setScore(int score) {
