@@ -39,6 +39,6 @@ public abstract class Person {
   }
 
   public void printHand(){
-    System.out.println(this.getName() + "'s hand is " + this.hand + " valued at " + this.getHand().totalValue());
+    System.out.println(this.getName() + "'s hand - " + this.hand + Colors.RESET + " - valued at " + this.getHand().totalValue());
   }
 }
