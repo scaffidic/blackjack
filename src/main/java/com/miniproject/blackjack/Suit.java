@@ -1,5 +1,8 @@
 package com.miniproject.blackjack;
 
+/**
+ * Enum that represents the four possible suits of a card.
+ */
 public enum Suit {
   CLUBS('\u2663'),
   DIAMONDS('\u2662'),

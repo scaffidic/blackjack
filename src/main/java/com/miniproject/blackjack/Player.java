@@ -21,7 +21,7 @@ public class Player extends Person {
         System.out.println(Colors.YELLOW + "\n\tPress (1) to Hit or (2) to Stand.\n" + Colors.RESET);
         decision = input.nextInt();
 
-        if (decision > 2 || decision < 1){
+        if (decision > 2 || decision < 1) {
           throw new InputMismatchException();
         }
 
@@ -33,11 +33,10 @@ public class Player extends Person {
 
       if (decision == 1) {
         hit(deck, discard);
-        if (this.getHand().totalValue() > 20){
+        if (this.getHand().totalValue() > 20) {
           return;
         }
-      }
-      else {
+      } else {
         System.out.println(Colors.YELLOW + "You stand.\n" + Colors.RESET);
         inputNum = false;
       }
