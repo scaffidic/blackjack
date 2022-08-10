@@ -4,8 +4,6 @@ import java.util.Arrays;
 
 public class Game {
 
-
-
   private int money;
   private final Dealer dealer;
   private final Player player;
@@ -26,7 +24,6 @@ public class Game {
     discardHands();
     System.out.println("Bets are 100 only. Your money is: " + getMoney());
 
-
     if (getMoney() <= 0){
       System.out.println("You are out of money. GAME IS OVER!");
       return false;
@@ -39,7 +36,6 @@ public class Game {
 
     System.out.println();
 
-    // TODO if-else statement
     if(player.isBlackjack() && dealer.isBlackjack()){
       // invoke push method
 
@@ -63,7 +59,7 @@ public class Game {
 
     player.hitOrStand(deck, discardDeck);
 
-    int playerScore = player.getHand().getScore();
+    int playerScore = player.getHand().totalValue();
 
     if (playerScore > 21){
       System.out.println("Player busted. You lose!");
@@ -75,7 +71,7 @@ public class Game {
     dealer.dealerPlay(deck, discardDeck);
     dealer.setDealerHandVisible(true);
     dealer.printHand();
-    int dealerScore = dealer.getHand().getScore();
+    int dealerScore = dealer.getHand().totalValue();
 
     if (dealerScore > 21){
       System.out.println("Dealer busted. You win!");

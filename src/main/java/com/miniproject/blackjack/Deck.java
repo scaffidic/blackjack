@@ -16,10 +16,6 @@ public class Deck {
 
   // TODO finish Deck constructor
   public Deck(boolean mainDeck) {
-    // loop through Rank enum values
-    // nested loop through Suit enum values
-    // create new Card(Rank, Suit)
-    // add created Card to Array list
 
     deck = new ArrayList<>();
 
