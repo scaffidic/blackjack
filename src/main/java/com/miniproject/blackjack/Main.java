@@ -8,7 +8,7 @@ public class Main {
   public static void main(String[] args) {
 
     System.out.println();
-    System.out.println(ANSI_GREEN + "Welcome to Blackjack!" + ANSI_RESET);
+    System.out.println(ANSI_GREEN + "Welcome to Blackjack!\n" + ANSI_RESET);
     Game game = new Game();
 
     boolean keepPlaying = true;

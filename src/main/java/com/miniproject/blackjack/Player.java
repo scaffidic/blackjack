@@ -7,8 +7,6 @@ public class Player extends Person {
 
   Scanner input = new Scanner(System.in);
 
-  private int bet;
-
   public Player() {
     super.setName("Player");
   }
@@ -29,7 +27,7 @@ public class Player extends Person {
 
       } catch (InputMismatchException e) {
         System.out.println("Invalid entry");
-        input.next();
+        input.nextLine();
         continue;
       }
 
@@ -40,7 +38,7 @@ public class Player extends Person {
         }
       }
       else {
-        System.out.println("You have chosen to Stand.");
+        System.out.println("You stand.");
         inputNum = false;
       }
     }

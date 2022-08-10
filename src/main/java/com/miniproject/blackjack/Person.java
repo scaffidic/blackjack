@@ -22,9 +22,6 @@ public abstract class Person {
     deck.draw(this, discardDeck);
   }
 
-
-  //add hit and stand
-
   public String getName() {
     return name;
   }
