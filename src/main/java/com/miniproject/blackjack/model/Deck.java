@@ -1,5 +1,6 @@
-package com.miniproject.blackjack;
+package com.miniproject.blackjack.model;
 
+import com.miniproject.blackjack.controller.Person;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;

@@ -2,6 +2,8 @@ package com.miniproject.blackjack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.miniproject.blackjack.controller.Player;
+import com.miniproject.blackjack.model.Deck;
 import java.util.InputMismatchException;
 import org.junit.jupiter.api.Test;
 
