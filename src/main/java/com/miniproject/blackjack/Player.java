@@ -18,7 +18,7 @@ public class Player extends Person {
     while (inputNum) {
       printHand();
       try {
-        System.out.println("\n\tPress (1) to Hit or (2) to Stand.");
+        System.out.println(Colors.YELLOW + "\n\tPress (1) to Hit or (2) to Stand.\n" + Colors.RESET);
         decision = input.nextInt();
 
         if (decision > 2 || decision < 1){
@@ -26,7 +26,7 @@ public class Player extends Person {
         }
 
       } catch (InputMismatchException e) {
-        System.out.println("Invalid entry");
+        System.out.println(Colors.RED + "Invalid entry\n" + Colors.RESET);
         input.nextLine();
         continue;
       }
@@ -38,7 +38,7 @@ public class Player extends Person {
         }
       }
       else {
-        System.out.println("You stand.");
+        System.out.println(Colors.YELLOW + "You stand.\n" + Colors.RESET);
         inputNum = false;
       }
     }
