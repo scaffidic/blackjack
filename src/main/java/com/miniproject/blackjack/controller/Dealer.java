@@ -1,4 +1,6 @@
-package com.miniproject.blackjack;
+package com.miniproject.blackjack.controller;
+
+import com.miniproject.blackjack.model.Deck;
 
 public class Dealer extends Person {
 

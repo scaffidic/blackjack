@@ -1,6 +1,8 @@
-package com.miniproject.blackjack;
+package com.miniproject.blackjack.model;
 
-import java.awt.Color;
+import com.miniproject.blackjack.view.Colors;
+import com.miniproject.blackjack.controller.Dealer;
+import com.miniproject.blackjack.controller.Player;
 import java.util.Scanner;
 
 public class Game {
@@ -43,22 +45,21 @@ public class Game {
     System.out.println();
 
     if(player.isBlackjack() && dealer.isBlackjack()){
-      // invoke push method
-
-      return true;
+      System.out.println(Colors.CYAN + "\nPush!\n" + Colors.RESET);
+      printAllHands();
+      return keepPlayingOrNot();
     } else if (player.isBlackjack()) {
       // player wins
       System.out.println(Colors.GREEN + playerName + " hit blackjack! You win!" + Colors.RESET);
       printAllHands();
       setMoney(getMoney() + 100);
-
-      return true;
+      return keepPlayingOrNot();
     } else if (dealer.isBlackjack()) {
       // dealer wins
       System.out.println(Colors.RED + "\nDealer hit blackjack!" + Colors.RESET);
       printAllHands();
       setMoney(getMoney() - 100);
-      return true;
+      return keepPlayingOrNot();
     }
 
     showDealerHand();

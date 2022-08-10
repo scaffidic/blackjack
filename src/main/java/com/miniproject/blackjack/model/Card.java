@@ -1,4 +1,4 @@
-package com.miniproject.blackjack;
+package com.miniproject.blackjack.model;
 
 public class Card {
 

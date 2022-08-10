@@ -1,7 +1,8 @@
 package com.miniproject.blackjack;
 
 
-import java.util.Scanner;
+import com.miniproject.blackjack.model.Game;
+import com.miniproject.blackjack.view.Colors;
 
 /**
  * Demonstrates the simple console-mode Blackjack gameplay.
