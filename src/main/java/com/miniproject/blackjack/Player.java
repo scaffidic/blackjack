@@ -29,7 +29,7 @@ public class Player extends Person {
 
       } catch (InputMismatchException e) {
         System.out.println("Invalid entry");
-        input.next();
+        input.nextLine();
         continue;
       }
 
