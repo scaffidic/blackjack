@@ -1,7 +1,8 @@
 package com.miniproject.blackjack;
 
 
-import java.util.Scanner;
+import com.miniproject.blackjack.model.Game;
+import com.miniproject.blackjack.view.Colors;
 
 /**
  * Demonstrates the simple console-mode Blackjack gameplay.
@@ -15,10 +16,6 @@ public class Main {
    *
    * @param args Command-line arguments
    */
-
-  public static final String ANSI_RESET = "\u001B[0m";
-  public static final String ANSI_GREEN = "\u001B[32m";
-
 
   public static void main(String[] args) {
 

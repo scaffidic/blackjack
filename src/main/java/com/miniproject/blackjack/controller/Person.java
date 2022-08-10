@@ -1,4 +1,8 @@
-package com.miniproject.blackjack;
+package com.miniproject.blackjack.controller;
+
+import com.miniproject.blackjack.model.Hand;
+import com.miniproject.blackjack.model.Deck;
+import com.miniproject.blackjack.view.Colors;
 
 public abstract class Person {
 

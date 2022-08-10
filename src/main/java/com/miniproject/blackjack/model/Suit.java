@@ -1,4 +1,4 @@
-package com.miniproject.blackjack;
+package com.miniproject.blackjack.model;
 
 /**
  * Enum that represents the four possible suits of a card.

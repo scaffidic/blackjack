@@ -1,5 +1,7 @@
-package com.miniproject.blackjack;
+package com.miniproject.blackjack.model;
 
+import com.miniproject.blackjack.model.Card;
+import com.miniproject.blackjack.model.Deck;
 import java.util.ArrayList;
 
 public class Hand {
