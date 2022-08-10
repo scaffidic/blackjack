@@ -13,12 +13,12 @@ public class Player extends Person {
     super.setName("Player");
   }
 
-  public void hitOrStand(Deck deck, Deck discard) {
+  public void hitOrStand(Deck deck) {
     int decision = 0;
     boolean inputNum = true;
 
     while (inputNum) {
-      printHand();
+      System.out.println(getHand());
       try {
         System.out.println(Colors.YELLOW + "\nPress (1) to Hit or (2) to Stand.\n" + Colors.RESET);
         decision = input.nextInt();
@@ -34,7 +34,7 @@ public class Player extends Person {
       }
 
       if (decision == 1) {
-        hit(deck, discard);
+        hit(deck);
         if (this.getHand().totalValue() > 20) {
           return;
         }

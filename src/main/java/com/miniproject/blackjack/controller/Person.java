@@ -11,7 +11,7 @@ public abstract class Person {
   private Hand hand;
 
   //Constructor
-  public Person () {
+  public Person() {
     this.hand = new Hand();
     this.name = "";
 
@@ -22,8 +22,8 @@ public abstract class Person {
     return hand.totalValue() == 21;
   }
 
-  public void hit(Deck deck, Deck discardDeck) {
-    deck.draw(this, discardDeck);
+  public void hit(Deck deck) {
+    hand.addToHand(deck.draw());
   }
 
   public String getName() {
@@ -38,11 +38,9 @@ public abstract class Person {
     return hand;
   }
 
-  public void setHand(Hand hand) {
-    this.hand = hand;
-  }
-
-  public void printHand(){
-    System.out.println(this.getName() + "'s hand - " + this.hand + Colors.RESET + " - valued at " + this.getHand().totalValue());
+  @Override
+  public String toString() {
+    return this.getName() + "'s hand - " + this.hand + Colors.RESET + " - valued at "
+        + this.getHand().totalValue();
   }
 }

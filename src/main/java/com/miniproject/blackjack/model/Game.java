@@ -10,14 +10,12 @@ public class Game {
   private final Dealer dealer;
   private final Player player;
   private Deck deck;
-  private Deck discardDeck;
   private final String playerName;
 
   public Game() {
     money = 1000;
-    deck = new Deck(true);
+    deck = new Deck();
     deck.shuffle();
-    discardDeck = new Deck();
     dealer = new Dealer();
     player = new Player();
     System.out.println(Colors.YELLOW + "What is your name?\n" + Colors.RESET);
@@ -25,11 +23,12 @@ public class Game {
     String name = input.nextLine();
     playerName = name;
     player.setName(Colors.BLUE + playerName);
+//    System.out.println("You bet: " + betMoney());
   }
 
   public boolean startRound() {
     dealer.setDealerHandVisible(false);
-    discardHands();
+//    betMoney();
     displayBank();
 
     if (getMoney() <= 0){
@@ -37,10 +36,8 @@ public class Game {
       return false;
     }
 
-    deck.draw(player, discardDeck);
-    deck.draw(dealer, discardDeck);
-    deck.draw(player, discardDeck);
-    deck.draw(dealer, discardDeck);
+      player.hit(deck);
+      dealer.hit(deck);
 
     System.out.println();
 
@@ -64,7 +61,7 @@ public class Game {
 
     showDealerHand();
 
-    player.hitOrStand(deck, discardDeck);
+    player.hitOrStand(deck);
 
     int playerScore = player.getHand().totalValue();
 
@@ -77,7 +74,7 @@ public class Game {
       return playOrNot;
     }
 
-    dealer.dealerPlay(deck, discardDeck);
+    dealer.dealerPlay(deck);
     dealer.setDealerHandVisible(true);
     showDealerHand();
     int dealerScore = dealer.getHand().totalValue();
@@ -111,13 +108,13 @@ public class Game {
 
   private void showDealerHand() {
     System.out.print(Colors.PURPLE);
-    dealer.printHand();
+    dealer.toString();
     System.out.print(Colors.RESET);
   }
 
   private void displayBank() {
     System.out.println(Colors.CYAN + "\n----------------------------------------");
-    System.out.printf("| " + Colors.RESET + "$100 Bets. Current Bank Value: " + Colors.GREEN + "$%d " + Colors.CYAN + "|\n", getMoney());
+    System.out.printf("| " + Colors.RESET + "Current Bank Value: " + Colors.GREEN + "$%d " + Colors.CYAN + "|\n", getMoney());
     System.out.println("----------------------------------------" + Colors.RESET);
   }
 
@@ -126,15 +123,10 @@ public class Game {
     System.out.print(Colors.BLACK + Colors.WHITE_BACKGROUND);
     System.out.println("\tFinal:" + Colors.RESET);
     System.out.print(Colors.PURPLE);
-    dealer.printHand();
+    dealer.toString();
     System.out.print(Colors.BLUE);
-    player.printHand();
+    player.toString();
     System.out.print(Colors.RESET);
-  }
-
-  public void discardHands(){
-    dealer.getHand().discardHand(discardDeck);
-    player.getHand().discardHand(discardDeck);
   }
 
   public boolean keepPlayingOrNot(){
@@ -148,20 +140,39 @@ public class Game {
     return answer == 'y';
   }
 
+//  public int betMoney() {
+//    System.out.println(
+//        Colors.YELLOW + "\n Enter the amount you would like to bet: \n" + Colors.RESET);
+//    int bet = 1;
+//    Scanner input = new Scanner(System.in);
+//    if (input.hasNextInt()) {
+//      bet = input.nextInt();
+//      if (bet > money) {
+//        System.out.println("Please enter an amount less than: " + money);
+//        input.nextInt();
+//      } else {
+//        System.out.println("You bet: " + bet +". Remaining balance: " + (money-bet));
+//      }
+//    }
+//    return bet;
+//  }
+
+//  public boolean doubleDown() {
+//    System.out.println(Colors.YELLOW + "\n double down? \n Y - to double down. "
+//        + "\n Any other character - to reject\n" + Colors.RESET);
+//    Scanner input = new Scanner(System.in);
+//    char response = input.next().toLowerCase().charAt(0);
+//    if (response == 'y') {
+//
+//    }
+//  }
+
   public Deck getDeck() {
     return deck;
   }
 
   public void setDeck(Deck deck) {
     this.deck = deck;
-  }
-
-  public Deck getDiscardDeck() {
-    return discardDeck;
-  }
-
-  public void setDiscardDeck(Deck discardDeck) {
-    this.discardDeck = discardDeck;
   }
 
   public int getMoney() {
