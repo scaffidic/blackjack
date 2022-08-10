@@ -3,7 +3,6 @@ package com.miniproject.blackjack;
 import java.util.Arrays;
 
 public class Game {
-
   private int money;
   private final Dealer dealer;
   private final Player player;
@@ -22,9 +21,9 @@ public class Game {
   public boolean startRound() {
     dealer.setDealerHandVisible(false);
     discardHands();
-    System.out.println("------------------------------------------");
-    System.out.printf("| Bets are 100 only. Your money is: %d |\n", getMoney());
-    System.out.println("------------------------------------------");
+    System.out.println("----------------------------------------");
+    System.out.printf("| $100 Bets. Current Bank Value: $%d |\n", getMoney());
+    System.out.println("----------------------------------------");
 
     if (getMoney() <= 0){
       System.out.println("You are out of money. GAME IS OVER!");

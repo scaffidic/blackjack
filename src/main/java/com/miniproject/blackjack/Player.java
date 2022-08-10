@@ -7,8 +7,6 @@ public class Player extends Person {
 
   Scanner input = new Scanner(System.in);
 
-  private int bet;
-
   public Player() {
     super.setName("Player");
   }
