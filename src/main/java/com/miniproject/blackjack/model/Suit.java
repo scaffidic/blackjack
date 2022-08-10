@@ -1,7 +1,7 @@
 package com.miniproject.blackjack.model;
 
 /**
- * Enum that represents the four possible suits of a card.
+ * Enum that represents the four possible suits of a {@link Card}.
  */
 public enum Suit {
   CLUBS('\u2663'),

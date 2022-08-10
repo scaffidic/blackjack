@@ -1,5 +1,8 @@
 package com.miniproject.blackjack.model;
 
+/**
+ *  Enum that represents all the possible values for a standard deck of cards.
+ */
 public enum Rank {
   DEUCE("2", 2),
   THREE("3", 3),
@@ -19,6 +22,11 @@ public enum Rank {
 
   private final int value;
 
+  /**
+   * Constructor that assigns a symbol-value to an instance of a card.
+   * @param symbol
+   * @param value
+   */
   Rank(String symbol, int value) {
     this.symbol = symbol;
     this.value = value;

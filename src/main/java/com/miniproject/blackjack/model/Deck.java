@@ -17,14 +17,15 @@ public class Deck {
   private ArrayList<Card> deck;
 
   /**
-   * Default constructor for creating instance of Deck.
+   * Default constructor for creating instance of {@link Deck}.
    */
   public Deck(){
     deck = new ArrayList<Card>();
   }
 
   /**
-   * Constructor that takes a boolean parameter.
+   * Constructor that takes a boolean parameter. Constructs a {@link Suit} - {@link Rank} combination for creating an
+   * instance of {@link Deck}
    * @param mainDeck
    */
   // TODO finish Deck constructor
@@ -54,8 +55,8 @@ public class Deck {
   }
 
   /**
-   * Removes first card from the top of the deck and adds the player or dealer's hand.
-   * If the deck is empty, then remove first card from the top of the discard deck and adds the player or dealer's hand.
+   * Removes first card from the top of the deck and adds to the player or dealer's hand.
+   * If the deck is empty, then remove first card from the top of the discard deck and adds to the player or dealer's hand.
    * @param dealerOrPlayer
    * @param discardDeck
    */
@@ -76,6 +77,11 @@ public class Deck {
   }
 
   // Accessor methods
+
+  /**
+   * Returns the deck.
+   * @return Deck
+   */
   public ArrayList<Card> getDeck() {
     return deck;
   }
