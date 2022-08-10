@@ -3,32 +3,25 @@ package com.miniproject.blackjack.model;
 import com.miniproject.blackjack.model.Card;
 import com.miniproject.blackjack.model.Deck;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Hand {
 
-
-  private ArrayList<Card> hand;
+  private List<Card> hand;
 
    private int score;
 
 // Constructor
   public Hand(){
-    hand = new ArrayList<>();
+    hand = new LinkedList<>();
     score = 0;
   }
 
 // Business methods
   public boolean addToHand(Card card){
-    boolean cardAdded = hand.add(card);
-    return cardAdded;
-  }
-
-  public void discardHand(Deck discardDeck){
-    ArrayList<Card> currDiscardDeck = discardDeck.getDeck();
-    currDiscardDeck.addAll(getHand());
-    discardDeck.setDeck(currDiscardDeck);
-    setHand(new ArrayList<>());
-    setScore(0);
+    return hand.add(card);
   }
 
   public int totalValue() {
@@ -41,28 +34,23 @@ public class Hand {
         numAce++;
       }
     }
-    if (value > 21 && numAce > 0) {
       while(numAce > 0 && value > 21) {
         numAce--;
         value -= 10;
       }
-    }
     return value;
   }
 
 // Accessors
-  public ArrayList<Card> getHand() {
-    return hand;
+  public List<Card> getHand() {
+    return Collections.unmodifiableList(hand);
   }
 
-  public void setHand(ArrayList<Card> hand) {
-    this.hand = hand;
+  public void clear() {
+    hand.clear();
   }
 
-  public void setScore(int score) {
-    this.score = score;
-  }
-
+// toString()
   @Override
   public String toString() {
     return hand.toString();

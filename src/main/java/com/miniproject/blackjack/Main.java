@@ -1,7 +1,7 @@
 package com.miniproject.blackjack;
 
 
-import com.miniproject.blackjack.model.Game;
+import com.miniproject.blackjack.controller.Game;
 import com.miniproject.blackjack.view.Colors;
 
 /**

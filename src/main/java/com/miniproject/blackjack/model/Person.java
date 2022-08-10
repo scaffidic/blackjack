@@ -1,4 +1,4 @@
-package com.miniproject.blackjack.controller;
+package com.miniproject.blackjack.model;
 
 import com.miniproject.blackjack.model.Hand;
 import com.miniproject.blackjack.model.Deck;
@@ -11,21 +11,22 @@ public abstract class Person {
   private Hand hand;
 
   //Constructor
-  public Person () {
+  public Person() {
     this.hand = new Hand();
     this.name = "";
 
   }
 
-  //Check if Player or Dealer has Blackjack
+  // Business methods
   public boolean isBlackjack() {
     return hand.totalValue() == 21;
   }
 
-  public void hit(Deck deck, Deck discardDeck) {
-    deck.draw(this, discardDeck);
+  public void hit(Deck deck) {
+    hand.addToHand(deck.draw());
   }
 
+  // Accessors and mutators
   public String getName() {
     return name;
   }
@@ -38,11 +39,10 @@ public abstract class Person {
     return hand;
   }
 
-  public void setHand(Hand hand) {
-    this.hand = hand;
-  }
-
-  public void printHand(){
-    System.out.println(this.getName() + "'s hand - " + this.hand + Colors.RESET + " - valued at " + this.getHand().totalValue());
+  // toString()
+  @Override
+  public String toString() {
+    return this.getName() + "'s hand - " + this.hand + Colors.RESET + " - valued at "
+        + this.getHand().totalValue();
   }
 }

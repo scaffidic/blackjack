@@ -1,9 +1,10 @@
 package com.miniproject.blackjack.model;
 
-import com.miniproject.blackjack.controller.Person;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -14,32 +15,27 @@ public class Deck {
   /**
    * The ArrayList of cards in the deck, where the top card is at index[0].
    */
-  private ArrayList<Card> deck;
+  private final List<Card> deck;
+  private final Random rng;
+  private Iterator<Card> cardIterator;
 
   /**
-   * Default constructor for creating instance of {@link Deck}.
+   * Constructor that takes a boolean parameter.
    */
-  public Deck(){
-    deck = new ArrayList<Card>();
-  }
 
-  /**
-   * Constructor that takes a boolean parameter. Constructs a {@link Suit} - {@link Rank} combination for creating an
-   * instance of {@link Deck}
-   * @param mainDeck
-   */
-  // TODO finish Deck constructor
-  public Deck(boolean mainDeck) {
+  // Constructor
+  public Deck() {
 
     deck = new ArrayList<>();
+    rng = new SecureRandom();
 
-     Suit[] suits = Suit.values();
-     Rank[] ranks = Rank.values();
+    Suit[] suits = Suit.values();
+    Rank[] ranks = Rank.values();
 
-    for (Suit suit: suits) {
-      for (Rank rank: ranks){
+    for (Suit suit : suits) {
+      for (Rank rank : ranks) {
         Card card = new Card(rank, suit);
-          deck.add(card);
+        deck.add(card);
       }
     }
   }
@@ -50,44 +46,22 @@ public class Deck {
    * Shuffles deck by randomly swapping pairs of cards.
    */
   public void shuffle() {
-    Random rng = new SecureRandom();
     Collections.shuffle(deck, rng);
+    cardIterator = deck.iterator();
   }
 
   /**
-   * Removes first card from the top of the deck and adds to the player or dealer's hand.
-   * If the deck is empty, then remove first card from the top of the discard deck and adds to the player or dealer's hand.
-   * @param dealerOrPlayer
-   * @param discardDeck
+   * Removes first card from the top of the deck and adds the player or dealer's hand. If the deck
+   * is empty, then remove first card from the top of the discard deck and adds the player or
+   * dealer's hand.
    */
-  // TODO finish draw() method
-  public void draw(Person dealerOrPlayer, Deck discardDeck) {
+
+  public Card draw() {
     Card nextCard;
-    if (!deck.isEmpty()) {
-      nextCard = deck.remove(0);
-      dealerOrPlayer.getHand().addToHand(nextCard);
-//      deck.iterator();
-    } else {
-      // take all cards from discard deck, add to shoe deck, then shuffle shoe;
-      deck.addAll(discardDeck.getDeck());
-      discardDeck.setDeck(new ArrayList<>());
+    if (cardIterator == null || !cardIterator.hasNext()) {
       shuffle();
-      draw(dealerOrPlayer, discardDeck);
     }
-  }
-
-  // Accessor methods
-
-  /**
-   * Returns the deck.
-   * @return Deck
-   */
-  public ArrayList<Card> getDeck() {
-    return deck;
-  }
-
-  public void setDeck(ArrayList<Card> deck) {
-    this.deck = deck;
+    return cardIterator.next();
   }
 
   // toString()
