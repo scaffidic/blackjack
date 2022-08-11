@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -122,7 +122,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="Person.html" title="class in com.miniproject.blackjack.controller">com.miniproject.blackjack.model.Person</a></li>
+<li><a href="../model/Person.html" title="class in com.miniproject.blackjack.model">com.miniproject.blackjack.model.Person</a></li>
 <li>
 <ul class="inheritance">
 <li>com.miniproject.blackjack.controller.Player</li>
@@ -136,7 +136,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <hr>
 <pre>public class <span class="typeNameLabel">Player</span>
-extends <a href="Person.html" title="class in com.miniproject.blackjack.controller">Person</a></pre>
+extends <a href="../model/Person.html" title="class in com.miniproject.blackjack.model">Person</a></pre>
+<div class="block">An implementation of a player object which extends <a href="../model/Person.html" title="class in com.miniproject.blackjack.model"><code>Person</code></a>.</div>
 </li>
 </ul>
 </div>
@@ -158,7 +159,9 @@ extends <a href="Person.html" title="class in com.miniproject.blackjack.controll
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Player</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs an instance of <a href="Player.html" title="class in com.miniproject.blackjack.controller"><code>Player</code></a>.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -179,9 +182,30 @@ extends <a href="Person.html" title="class in com.miniproject.blackjack.controll
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>double</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBet()">getBet</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>double</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getMoney()">getMoney</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hitOrStand(com.miniproject.blackjack.model.Deck,com.miniproject.blackjack.model.Deck)">hitOrStand</a></span>&#8203;(<a href="../model/Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;deck,
-          <a href="../model/Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;discard)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hitOrStand(com.miniproject.blackjack.model.Deck)">hitOrStand</a></span>&#8203;(<a href="../model/Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;deck)</code></th>
+<td class="colLast">
+<div class="block">Offers the player an option to either hit or stand before dealer's play.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setBet(double)">setBet</a></span>&#8203;(double&nbsp;bet)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setMoney(double)">setMoney</a></span>&#8203;(double&nbsp;money)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -189,15 +213,15 @@ extends <a href="Person.html" title="class in com.miniproject.blackjack.controll
 <li class="blockList"><a id="methods.inherited.from.class.com.miniproject.blackjack.model.Person">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;com.miniproject.blackjack.controller.<a href="Person.html" title="class in com.miniproject.blackjack.controller">Person</a></h3>
-<code><a href="Person.html#getHand()">getHand</a>, <a href="Person.html#getName()">getName</a>, <a href="Person.html#hit(com.miniproject.blackjack.model.Deck,com.miniproject.blackjack.model.Deck)">hit</a>, <a href="Person.html#isBlackjack()">isBlackjack</a>, <a href="Person.html#printHand()">printHand</a>, <a href="Person.html#setHand(com.miniproject.blackjack.model.Hand)">setHand</a>, <a href="Person.html#setName(java.lang.String)">setName</a></code></li>
+<h3>Methods inherited from class&nbsp;com.miniproject.blackjack.model.<a href="../model/Person.html" title="class in com.miniproject.blackjack.model">Person</a></h3>
+<code><a href="../model/Person.html#getHand()">getHand</a>, <a href="../model/Person.html#getName()">getName</a>, <a href="../model/Person.html#hit(com.miniproject.blackjack.model.Deck)">hit</a>, <a href="../model/Person.html#isBlackjack()">isBlackjack</a>, <a href="../model/Person.html#setName(java.lang.String)">setName</a>, <a href="../model/Person.html#toString()">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
+<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang" class="externalLink">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang" class="externalLink">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang" class="externalLink">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang" class="externalLink">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang" class="externalLink">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang" class="externalLink">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang" class="externalLink">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang" class="externalLink">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#wait(long,int)" title="class or interface in java.lang" class="externalLink">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -222,6 +246,7 @@ extends <a href="Person.html" title="class in com.miniproject.blackjack.controll
 <li class="blockList">
 <h4>Player</h4>
 <pre>public&nbsp;Player()</pre>
+<div class="block">Constructs an instance of <a href="Player.html" title="class in com.miniproject.blackjack.controller"><code>Player</code></a>.</div>
 </li>
 </ul>
 </li>
@@ -234,14 +259,56 @@ extends <a href="Person.html" title="class in com.miniproject.blackjack.controll
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="hitOrStand(com.miniproject.blackjack.model.Deck,com.miniproject.blackjack.model.Deck)">
+<a id="hitOrStand(com.miniproject.blackjack.model.Deck)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hitOrStand</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;hitOrStand&#8203;(<a href="../model/Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;deck)</pre>
+<div class="block">Offers the player an option to either hit or stand before dealer's play.
+ <p>If the total amount of money that a player has is more than twice their bet amount,
+ the player is given an additional option to double down.</p></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>deck</code> - </dd>
+</dl>
+</li>
+</ul>
+<a id="getBet()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getBet</h4>
+<pre class="methodSignature">public&nbsp;double&nbsp;getBet()</pre>
+</li>
+</ul>
+<a id="setBet(double)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBet</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setBet&#8203;(double&nbsp;bet)</pre>
+</li>
+</ul>
+<a id="getMoney()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMoney</h4>
+<pre class="methodSignature">public&nbsp;double&nbsp;getMoney()</pre>
+</li>
+</ul>
+<a id="setMoney(double)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>hitOrStand</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;hitOrStand&#8203;(<a href="../model/Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;deck,
-                       <a href="../model/Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;discard)</pre>
+<h4>setMoney</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;setMoney&#8203;(double&nbsp;money)</pre>
 </li>
 </ul>
 </li>

@@ -31,7 +31,6 @@ public abstract class Person {
   }
 
   // Business methods
-
   /**
    * Checks if any instance of {@link Person} has a total value of 21 in their hand.
    *

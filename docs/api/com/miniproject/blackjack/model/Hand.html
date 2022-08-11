@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Hand</span>
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></pre>
+<div class="block">An implementation of a hand.</div>
 </li>
 </ul>
 </div>
@@ -153,7 +154,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Hand</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs an instance of <a href="Hand.html" title="class in com.miniproject.blackjack.model"><code>Hand</code></a>.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -176,37 +179,37 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addToHand(com.miniproject.blackjack.model.Card)">addToHand</a></span>&#8203;(<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&nbsp;card)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Takes an instance of <a href="Card.html" title="class in com.miniproject.blackjack.model"><code>Card</code></a> and adds it to the hand.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#discardHand(com.miniproject.blackjack.model.Deck)">discardHand</a></span>&#8203;(<a href="Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;discardDeck)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#clear()">clear</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Clears hand.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html?is-external=true" title="class or interface in java.util" class="externalLink">ArrayList</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getHand()">getHand</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Retrieves an instance of <a href="Hand.html" title="class in com.miniproject.blackjack.model"><code>Hand</code></a>.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setHand(java.util.ArrayList)">setHand</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html?is-external=true" title="class or interface in java.util" class="externalLink">ArrayList</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;&nbsp;hand)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setScore(int)">setScore</a></span>&#8203;(int&nbsp;score)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">toString method</div>
+</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#totalValue()">totalValue</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Finds the total value of the hand using the value attribute from <a href="Rank.html" title="enum in com.miniproject.blackjack.model"><code>Rank</code></a>.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -239,6 +242,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>Hand</h4>
 <pre>public&nbsp;Hand()</pre>
+<div class="block">Constructs an instance of <a href="Hand.html" title="class in com.miniproject.blackjack.model"><code>Hand</code></a>.</div>
 </li>
 </ul>
 </li>
@@ -258,15 +262,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>addToHand</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;addToHand&#8203;(<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&nbsp;card)</pre>
-</li>
-</ul>
-<a id="discardHand(com.miniproject.blackjack.model.Deck)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>discardHand</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;discardHand&#8203;(<a href="Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;discardDeck)</pre>
+<div class="block">Takes an instance of <a href="Card.html" title="class in com.miniproject.blackjack.model"><code>Card</code></a> and adds it to the hand.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>card</code> - </dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>returns the hand with an additional card.</dd>
+</dl>
 </li>
 </ul>
 <a id="totalValue()">
@@ -276,6 +278,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>totalValue</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;totalValue()</pre>
+<div class="block">Finds the total value of the hand using the value attribute from <a href="Rank.html" title="enum in com.miniproject.blackjack.model"><code>Rank</code></a>.
+ Calculates whether an instance of Ace will be valued high or low.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+</dl>
 </li>
 </ul>
 <a id="getHand()">
@@ -284,25 +291,22 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <ul class="blockList">
 <li class="blockList">
 <h4>getHand</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html?is-external=true" title="class or interface in java.util" class="externalLink">ArrayList</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;&nbsp;getHand()</pre>
+<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;&nbsp;getHand()</pre>
+<div class="block">Retrieves an instance of <a href="Hand.html" title="class in com.miniproject.blackjack.model"><code>Hand</code></a>.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>returns an unmodifiable list of the hand.</dd>
+</dl>
 </li>
 </ul>
-<a id="setHand(java.util.ArrayList)">
+<a id="clear()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setHand</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setHand&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html?is-external=true" title="class or interface in java.util" class="externalLink">ArrayList</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;&nbsp;hand)</pre>
-</li>
-</ul>
-<a id="setScore(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setScore</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setScore&#8203;(int&nbsp;score)</pre>
+<h4>clear</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;clear()</pre>
+<div class="block">Clears hand.</div>
 </li>
 </ul>
 <a id="toString()">
@@ -312,9 +316,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<div class="block">toString method</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>returns the <a href="Hand.html" title="class in com.miniproject.blackjack.model"><code>Hand</code></a> toString implementation.</dd>
 </dl>
 </li>
 </ul>

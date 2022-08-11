@@ -26,7 +26,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var data = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -155,13 +155,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Deck</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Default constructor for creating instance of Deck.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(boolean)">Deck</a></span>&#8203;(boolean&nbsp;mainDeck)</code></th>
-<td class="colLast">
-<div class="block">Constructor that takes a boolean parameter.</div>
+<div class="block">Constructs an instance of a <a href="Deck.html" title="class in com.miniproject.blackjack.model"><code>Deck</code></a>.</div>
 </td>
 </tr>
 </table>
@@ -183,34 +177,25 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#draw(com.miniproject.blackjack.model.Person,com.miniproject.blackjack.model.Deck)">draw</a></span>&#8203;(<a href="../controller/Person.html" title="class in com.miniproject.blackjack.controller">Person</a>&nbsp;dealerOrPlayer,
-    <a href="Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;discardDeck)</code></th>
+<td class="colFirst"><code><a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#draw()">draw</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Removes first card from the top of the deck and adds the player or dealer's hand.</div>
+<div class="block">Iterates over the deck of cards.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html?is-external=true" title="class or interface in java.util" class="externalLink">ArrayList</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDeck()">getDeck</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setDeck(java.util.ArrayList)">setDeck</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html?is-external=true" title="class or interface in java.util" class="externalLink">ArrayList</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;&nbsp;deck)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shuffle()">shuffle</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Shuffles deck by randomly swapping pairs of cards.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">toString method.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -239,25 +224,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <a id="&lt;init&gt;()">
 <!--   -->
 </a>
-<ul class="blockList">
-<li class="blockList">
-<h4>Deck</h4>
-<pre>public&nbsp;Deck()</pre>
-<div class="block">Default constructor for creating instance of Deck.</div>
-</li>
-</ul>
-<a id="&lt;init&gt;(boolean)">
-<!--   -->
-</a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Deck</h4>
-<pre>public&nbsp;Deck&#8203;(boolean&nbsp;mainDeck)</pre>
-<div class="block">Constructor that takes a boolean parameter.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>mainDeck</code> - </dd>
-</dl>
+<pre>public&nbsp;Deck()</pre>
+<div class="block">Constructs an instance of a <a href="Deck.html" title="class in com.miniproject.blackjack.model"><code>Deck</code></a>.</div>
 </li>
 </ul>
 </li>
@@ -280,39 +251,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Shuffles deck by randomly swapping pairs of cards.</div>
 </li>
 </ul>
-<a id="draw(com.miniproject.blackjack.model.Person,com.miniproject.blackjack.model.Deck)">
+<a id="draw()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>draw</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;draw&#8203;(<a href="../controller/Person.html" title="class in com.miniproject.blackjack.controller">Person</a>&nbsp;dealerOrPlayer,
-                 <a href="Deck.html" title="class in com.miniproject.blackjack.model">Deck</a>&nbsp;discardDeck)</pre>
-<div class="block">Removes first card from the top of the deck and adds the player or dealer's hand.
- If the deck is empty, then remove first card from the top of the discard deck and adds the player or dealer's hand.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>dealerOrPlayer</code> - </dd>
-<dd><code>discardDeck</code> - </dd>
-</dl>
-</li>
-</ul>
-<a id="getDeck()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getDeck</h4>
-<pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html?is-external=true" title="class or interface in java.util" class="externalLink">ArrayList</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;&nbsp;getDeck()</pre>
-</li>
-</ul>
-<a id="setDeck(java.util.ArrayList)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setDeck</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;setDeck&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html?is-external=true" title="class or interface in java.util" class="externalLink">ArrayList</a>&lt;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&gt;&nbsp;deck)</pre>
+<pre class="methodSignature">public&nbsp;<a href="Card.html" title="class in com.miniproject.blackjack.model">Card</a>&nbsp;draw()</pre>
+<div class="block">Iterates over the deck of cards.
+ If there are no cards, the shuffle method is implemented.</div>
 </li>
 </ul>
 <a id="toString()">
@@ -322,9 +269,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<div class="block">toString method.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>Returns the decks, toString implementation.</dd>
 </dl>
 </li>
 </ul>
