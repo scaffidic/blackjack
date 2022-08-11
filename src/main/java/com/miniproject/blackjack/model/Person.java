@@ -34,6 +34,7 @@ public abstract class Person {
 
   /**
    * Checks if any instance of {@link Person} has a total value of 21 in their hand.
+   *
    * @return returns true if {@link Hand} is equal to 21.
    */
   public boolean isBlackjack() {
@@ -42,6 +43,7 @@ public abstract class Person {
 
   /**
    * Draws a card from the {@link Deck} and adds it to the player's or dealer's {@link Hand}.
+   *
    * @param deck
    */
   public void hit(Deck deck) {
@@ -65,6 +67,7 @@ public abstract class Person {
 
   /**
    * toString method.
+   *
    * @return Returns the {@link Person}, toString implementation.
    */
   @Override

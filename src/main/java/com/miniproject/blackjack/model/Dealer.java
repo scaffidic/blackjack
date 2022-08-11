@@ -23,6 +23,7 @@ public class Dealer extends Person {
 
   /**
    * Sets dealer's hand so that both cards are visible.
+   *
    * @param dealerHandVisible
    */
   public void setDealerHandVisible(boolean dealerHandVisible) {
@@ -33,20 +34,24 @@ public class Dealer extends Person {
 
   /**
    * Dealer's logic whether to hit or stand.
+   *
    * @param deck
    */
   public void dealerPlay(Deck deck) {
     while (super.getHand().totalValue() <= 16) {
       System.out.printf(
-         Colors.PURPLE + "%s's hand - " + this.getHand().getHand() + Colors.RESET + " - has %d points. Dealer hits.\n" ,
+          Colors.PURPLE + "%s's hand - " + this.getHand().getHand() + Colors.RESET
+              + " - has %d points. Dealer hits.\n",
           this.getName(), getHand().totalValue());
       getHand().addToHand(deck.draw());
     }
   }
 
   // toString()
+
   /**
    * toString method
+   *
    * @return returns the {@link Dealer}, toString implementation.
    */
   @Override

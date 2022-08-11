@@ -25,6 +25,7 @@ public class Card {
 
   /**
    * Constructs an instance of {@link Card} using its rank and suit.
+   *
    * @param rank
    * @param suit
    */
@@ -41,6 +42,7 @@ public class Card {
 
   /**
    * toString method.
+   *
    * @return returns the {@link Card}, toString implementation.
    */
   @Override

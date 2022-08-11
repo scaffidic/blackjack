@@ -23,6 +23,7 @@ public class Player extends Person {
   Scanner input = new Scanner(System.in);
 
   // Constructor
+
   /**
    * Constructs an instance of {@link Player}.
    */
@@ -32,10 +33,12 @@ public class Player extends Person {
   }
 
   // Business methods
+
   /**
    * Offers the player an option to either hit or stand before dealer's play.
    * <p>If the total amount of money that a player has is more than twice their bet amount,
    * the player is given an additional option to double down.</p>
+   *
    * @param deck
    */
   public void hitOrStand(Deck deck) {
@@ -47,9 +50,9 @@ public class Player extends Person {
       int upperLimit = 2;
       try {
         System.out.println(Colors.YELLOW + "\nPress:\n(1) to Hit \n(2) to Stand" + Colors.RESET);
-        if (getMoney() >= getBet() * 2){
-        System.out.println(Colors.YELLOW + "(3) to Double down" + Colors.RESET);
-        upperLimit = 3;
+        if (getMoney() >= getBet() * 2) {
+          System.out.println(Colors.YELLOW + "(3) to Double down" + Colors.RESET);
+          upperLimit = 3;
         }
 
         System.out.println();

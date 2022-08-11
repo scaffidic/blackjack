@@ -11,8 +11,8 @@ import com.miniproject.blackjack.view.Colors;
 public class Main {
 
   /**
-   * Creates an instance of {@link Game}, in order to keep playing until the
-   * false boolean is returned.
+   * Creates an instance of {@link Game}, in order to keep playing until the false boolean is
+   * returned.
    *
    * @param args Command-line arguments
    */
@@ -26,8 +26,8 @@ public class Main {
 
     boolean keepPlaying = true;
 
-    while(keepPlaying){
-    keepPlaying = game.startRound();
+    while (keepPlaying) {
+      keepPlaying = game.startRound();
     }
   }
 }
