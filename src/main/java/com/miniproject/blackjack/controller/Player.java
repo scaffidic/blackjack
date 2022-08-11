@@ -6,21 +6,38 @@ import com.miniproject.blackjack.view.Colors;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * An implementation of a player object which extends {@link Person}.
+ */
 public class Player extends Person {
 
+  /**
+   * The amount of money a player is betting expressed as a double.
+   */
   private double bet;
-
+  /**
+   * The amount of money a player currently has.
+   */
   private double money;
 
   Scanner input = new Scanner(System.in);
 
   // Constructor
+  /**
+   * Constructs an instance of {@link Player}.
+   */
   public Player() {
     super.setName("Player");
     money = 1000;
   }
 
   // Business methods
+  /**
+   * Offers the player an option to either hit or stand before dealer's play.
+   * <p>If the total amount of money that a player has is more than twice their bet amount,
+   * the player is given an additional option to double down.</p>
+   * @param deck
+   */
   public void hitOrStand(Deck deck) {
     int decision = 0;
     boolean inputNum = true;

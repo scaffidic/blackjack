@@ -14,6 +14,10 @@ public class Game {
   private Deck deck;
   private final String playerName;
 
+  /**
+   * Creates an instance of a Blackjack game by setting up a shuffled {@link Deck} and creating
+   * instances of {@link Player} and {@link Dealer}.
+   */
   public Game() {
     deck = new Deck();
     deck.shuffle();
@@ -26,6 +30,10 @@ public class Game {
     player.setName(Colors.BLUE + playerName);
   }
 
+  /**
+   * Initializes game.
+   * @return returns the option to keep playing.
+   */
   public boolean startRound() {
     dealer.setDealerHandVisible(false);
     player.getHand().clear();
@@ -122,12 +130,12 @@ public class Game {
   }
 
   private void displayBank() {
-    System.out.println(Colors.CYAN + "\n----------------------------------------");
+    System.out.println(Colors.CYAN + "\n--------------------------------------");
     System.out.printf(
-        "| " + Colors.RESET + "Current Bank Value: " + Colors.GREEN + "$%.2f "
-            + Colors.CYAN + "      |\n",
+        "|    " + Colors.RESET + "Current Bank Value: " + Colors.GREEN + "$%.2f "
+            + Colors.CYAN + "   |\n",
         player.getMoney());
-    System.out.println("----------------------------------------" + Colors.RESET);
+    System.out.println("--------------------------------------" + Colors.RESET);
   }
 
   private void printAllHands() {

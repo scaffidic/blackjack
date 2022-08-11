@@ -19,11 +19,10 @@ public class Deck {
   private final Random rng;
   private Iterator<Card> cardIterator;
 
-  /**
-   * Constructor that takes a boolean parameter.
-   */
-
   // Constructor
+  /**
+   * Constructs an instance of a {@link Deck}.
+   */
   public Deck() {
 
     deck = new ArrayList<>();
@@ -51,11 +50,9 @@ public class Deck {
   }
 
   /**
-   * Removes first card from the top of the deck and adds the player or dealer's hand. If the deck
-   * is empty, then remove first card from the top of the discard deck and adds the player or
-   * dealer's hand.
+   * Iterates over the deck of cards.
+   * If there are no cards, the shuffle method is implemented.
    */
-
   public Card draw() {
     Card nextCard;
     if (cardIterator == null || !cardIterator.hasNext()) {
@@ -65,6 +62,11 @@ public class Deck {
   }
 
   // toString()
+
+  /**
+   * toString method.
+   * @return Returns the decks, toString implementation.
+   */
   @Override
   public String toString() {
     return deck.toString();
