@@ -38,14 +38,13 @@ public class Dealer extends Person {
   public void dealerPlay(Deck deck) {
     while (super.getHand().totalValue() <= 16) {
       System.out.printf(
-          "%s's hand - " + this.getHand().getHand() + " - has %d points. Dealer hits.\n",
+         Colors.PURPLE + "%s's hand - " + this.getHand().getHand() + Colors.RESET + " - has %d points. Dealer hits.\n" ,
           this.getName(), getHand().totalValue());
       getHand().addToHand(deck.draw());
     }
   }
 
   // toString()
-
   /**
    * toString method
    * @return returns the {@link Dealer}, toString implementation.
