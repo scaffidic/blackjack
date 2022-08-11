@@ -32,6 +32,7 @@ public class Game {
 
   /**
    * Initializes game.
+   *
    * @return returns the option to keep playing.
    */
   public boolean startRound() {
@@ -40,12 +41,7 @@ public class Game {
     dealer.getHand().clear();
 
     displayBank();
-    if (player.getMoney() <= 0.0) {
-      System.out.println(Colors.RED + "\nYou are out of money. GAME IS OVER!" + Colors.RESET);
-      return false;
-    } else {
-      betMoney();
-    }
+    betMoney();
 
     player.hit(deck);
     dealer.hit(deck);
@@ -154,6 +150,10 @@ public class Game {
 
   public boolean keepPlayingOrNot() {
     displayBank();
+    if (player.getMoney() <= 0.0) {
+      System.out.println(Colors.RED + "\nYou are out of money. GAME IS OVER!" + Colors.RESET);
+      return false;
+    }
     System.out.println(Colors.YELLOW
         + "\n Do you want to keep playing? \n Y - to continue. \n Any other character - to exit\n"
         + Colors.RESET);
@@ -186,7 +186,8 @@ public class Game {
         input.nextLine();
         continue;
       }
-      System.out.println("\nYou bet: $" + bet + ". Remaining balance: $" + (player.getMoney() - bet));
+      System.out.println(
+          "\nYou bet: $" + bet + ". Remaining balance: $" + (player.getMoney() - bet));
       player.setBet(bet);
       inputNum = false;
     }
