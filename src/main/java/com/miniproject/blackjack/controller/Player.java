@@ -52,6 +52,7 @@ public class Player extends Person {
         upperLimit = 3;
         }
 
+        System.out.println();
         decision = input.nextInt();
 
         if (decision > upperLimit || decision < 1) {
@@ -59,7 +60,7 @@ public class Player extends Person {
         }
 
       } catch (InputMismatchException e) {
-        System.out.println(Colors.RED + "Invalid entry\n" + Colors.RESET);
+        System.out.println(Colors.RED + "\nInvalid entry\n" + Colors.RESET);
         input.nextLine();
         continue;
       }
@@ -71,13 +72,13 @@ public class Player extends Person {
         }
         System.out.println(this.toString());
       } else if (decision == 3) {
-        System.out.println(Colors.YELLOW + "You doubled down.\n" + Colors.RESET);
+        System.out.println(Colors.YELLOW + "\nYou doubled down.\n" + Colors.RESET);
 
         setBet(getBet() * 2);
         hit(deck);
         return;
       } else {
-        System.out.println(Colors.YELLOW + "You stand.\n" + Colors.RESET);
+        System.out.println(Colors.YELLOW + "\nYou stand.\n" + Colors.RESET);
         inputNum = false;
       }
     }

@@ -140,6 +140,7 @@ public class Game {
 
   private void printAllHands() {
     dealer.setDealerHandVisible(true);
+    System.out.println();
     System.out.print(Colors.BLACK + Colors.WHITE_BACKGROUND);
     System.out.println("\tFinal:" + Colors.RESET);
     System.out.print(Colors.PURPLE);
@@ -185,7 +186,7 @@ public class Game {
         input.nextLine();
         continue;
       }
-      System.out.println("You bet: $" + bet + ". Remaining balance: $" + (player.getMoney() - bet));
+      System.out.println("\nYou bet: $" + bet + ". Remaining balance: $" + (player.getMoney() - bet));
       player.setBet(bet);
       inputNum = false;
     }

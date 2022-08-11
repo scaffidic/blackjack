@@ -34,15 +34,7 @@ public class Card {
     value = rank.getValue();
   }
 
-  //accessors
-  public Rank getRank() {
-    return rank;
-  }
-
-  public Suit getSuit() {
-    return suit;
-  }
-
+  //Accessors
   public int getValue() {
     return value;
   }
